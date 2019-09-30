@@ -5,23 +5,25 @@ import LoginPage from "./Components/LoginPage/LogIn";
 import Nav from "./Components/Navbar/Nav";
 import Footer from "./Components/Footer/Footer";
 import Student from "./Components/StudentPage/Student"
+import Register from "./Components/RegisterPage/Register";
 
 
 
 function App() {
   return (
     <wrapper>
-   <div>
-     <Nav />
-     {/* </div> */}
+    <div>
+    <Nav /> 
+     </div>
      {/* <div> */}
      {/* <LoginPage /> */}
      {/* </div> */}
-      {/* <div> */}
+       <div>
         {/* <Admin /> */}
-        <Student />
+        {/* <Student /> */}
+        <Register />
      <Footer />
-     </div>
+     </div> 
      </wrapper>
    
     
