@@ -15,7 +15,7 @@ const connection = mysql.createConnection({
 
 connection.connect();
 
-require('../daily_schoolar/routes/html_routes')(app);
+require('../daily_schoolar/client/src/App')(App);
 
 app.listen(PORT, () => {
     console.log('***********************************')
