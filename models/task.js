@@ -27,23 +27,17 @@ module.exports = function(sequelize, DataTypes) {
 
         });
 
-        // "joining" the tables with sequelize
-        Task.associate = function(models) {
-            Task.belongsTo(models.Teacher, {
-              foreignKey: {
-                allowNull: false
-              }
-            });
-          };
+       // "joining" the tables with sequelize
+
 
           
-          Task.associate = function(models) {
+          Task.associate = function(models) {[
             Task.hasMany(models.Student, {
-              foreignKey: {
-                allowNull: false
-              }
-            });
-          };
+              onDelete: "cascade"
+            }), Task.hasMany(models.Teacher, {
+              onDelete: "cascade"
+            }) ]
+          }
 
 
           Task.sync();

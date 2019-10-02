@@ -21,17 +21,17 @@ module.exports = function(sequelize, DataTypes) {
             });
 
 // "joining" the tables with sequelize
-            Teacher.associate = function(models) {
-                Teacher.belongsTo(models.Student, {
-                  foreignKey: {
-                    allowNull: false
-                  }
-                });
-              };
+            // Teacher.associate = function(models) {
+            //     Teacher.belongsTo(models.Student, [{ 
+            //       foreignKey: {
+            //         allowNull: false
+            //       }
+            //     }]);
+            //   };
 
 
               Teacher.associate = function(models) {
-                Teacher.hasMany(models.Task, {
+                Teacher.belongsTo(models.Task, {
                   foreignKey: {
                     allowNull: false
                   }

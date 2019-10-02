@@ -13,13 +13,7 @@ module.exports = function(sequelize, DataTypes) {
     });
 
     // "joining" tables between the other two
-    Student.associate =  function(models) {
-        Student.belongsTo(models.Teacher, {
-            foreignKey: {
-                allowNull: false
-            };
-        });
-    };
+
 
     Student.associate =  function(models) {
         Student.belongsTo(models.Task, {
