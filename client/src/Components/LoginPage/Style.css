@@ -1,0 +1,14 @@
+body {
+    margin-top: 100px;
+    
+    height: 700px;
+}
+
+#adminTitle {
+    margin-left: 365px;
+    padding-top: -10px;
+}
+
+.btn {
+    margin-left: 970px;
+}
