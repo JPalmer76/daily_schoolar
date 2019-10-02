@@ -1,9 +1,9 @@
 {
     "development": {
-      "username": "e79uoyk342vx0syt",
-      "password": "xxk0otjswq1qqy38",
-      "database": "kb8je7otrbkp671t",
-      "host": "q68u8b2buodpme2n.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+      "username": "root",
+      "password": "chocolateMint",
+      "database": "dailySchoolarDemo",
+      "host": "localhost",
       "port": 3306,
       "dialect": "mysql"
     },
