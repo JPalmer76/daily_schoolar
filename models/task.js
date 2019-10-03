@@ -1,5 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
 
+
         const Task = sequelize.define('task', {
 
 
@@ -33,3 +34,4 @@ module.exports = function(sequelize, DataTypes) {
 
           return Task;
 };
+

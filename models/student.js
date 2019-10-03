@@ -1,4 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
+
     var Student = sequelize.define("student", {
         firstName: { type: DataTypes.STRING},
 
@@ -20,3 +21,4 @@ module.exports = function(sequelize, DataTypes) {
     return Student;
 
 }
+

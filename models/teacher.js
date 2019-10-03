@@ -1,3 +1,4 @@
+
 module.exports = function(sequelize, DataTypes) {
 
             const Teacher = sequelize.define('teacher', {
@@ -28,3 +29,4 @@ module.exports = function(sequelize, DataTypes) {
               return Teacher;
 
 };
+
