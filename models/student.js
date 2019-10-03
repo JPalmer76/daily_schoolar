@@ -1,15 +1,24 @@
 module.exports = function(sequelize, DataTypes) {
-    var Student = sequelize.define("Student", {
-      studentName: DataTypes.INTEGER,
-      updatedAt: DataTypes.DATE,
-      createdAt: DataTypes.DATE
+
+    var Student = sequelize.define("student", {
+        firstName: { type: DataTypes.STRING},
+
+        lastName: { type: DataTypes.STRING}        
+
     });
-  
-    Student.associate = function(models) {
-      Student.belongsTo(models.Task, {
-        onDelete: "cascade"
-      });
+
+    // "joining" tables between the other two
+
+
+    Student.associate =  function(models) {
+        console.log(models)
+        Student.hasMany(models.task, {
+            onDelete: "cascade"
+        });
     };
-  
+    
+
     return Student;
-  };
+
+}
+

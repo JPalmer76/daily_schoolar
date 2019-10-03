@@ -1,27 +1,37 @@
 module.exports = function(sequelize, DataTypes) {
-    var Task = sequelize.define("Task", {
-      taskName: DataTypes.STRING,
-      taskComplete: {
-        type: DataTypes.BOOLEAN, 
-        defaultValue: false
-      },
-      updatedAt: DataTypes.DATE,
-      createdAt: DataTypes.DATE
-    });
-  
-    Task.associate = function(models) {
-      Task.belongsTo(models.Teacher, {
-        foreignKey: {
-          allowNull: false
-        }
-      });
-    };
-    Task.associate = function(models) {
-      Task.hasMany(models.Student, {
-        foreignKey: {
-          allowNull: false
-        }
-      });
-    };
-    return Task;
-  };
+
+
+        const Task = sequelize.define('task', {
+
+
+            taskName: {
+                type: DataTypes.STRING,
+                
+            },
+            taskComplete: {
+                type: DataTypes.BOOLEAN,
+                defaultValue: false
+            }
+            
+        });
+
+       // "joining" the tables with sequelize
+
+
+          
+          Task.associate = function(models) {[
+            Task.belongsTo(models.student, {
+              foreignKey: {
+                allowNull: false
+              }  
+            }), Task.belongsTo(models.teacher, {
+              foreignKey: {
+                allowNull: false
+              }
+            }) ]
+          }
+
+
+          return Task;
+};
+

@@ -1,33 +1,33 @@
-const express = require('express');
 
+// *****************************************************************************
+// Server.js - This file is the initial starting point for the Node/Express server.
+//
+// ******************************************************************************
+// *** Dependencies
+// =============================================================
+const express = require("express");
 const mysql = require('mysql');
 
-const PORT = process.env.PORT || 3001;
-
+// Sets up the Express App
+// =============================================================
 const app = express();
+const PORT = process.env.PORT || 8080;
 
-// const connection = mysql.createConnection({
-//     host: 'q68u8b2buodpme2n.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',	
-//     user: 'e79uoyk342vx0syt',
-//     password: 'xxk0otjswq1qqy38',
-//     database: 'kb8je7otrbkp671t'
-// });
-
-// connection.connect();
-
+// Requiring our models for syncing
 const db = require("./models");
 
-require('../daily_schoolar/routes/html_routes')(app);
-require('../daily_schoolar/routes/api_routes')(app);
+
 
 // Sets up the Express app to handle data parsing
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+
+// Syncing our sequelize models and then starting our Express app
+// =============================================================
 db.sequelize.sync({ force: true }).then(function() {
-app.listen(PORT, () => {
-    console.log('***********************************')
-    console.log('Backend server running on port ' + PORT);
-    console.log('***********************************')
+    app.listen(PORT, function() {
+      console.log("App listening on PORT " + PORT);
     });
-});
+  });
+

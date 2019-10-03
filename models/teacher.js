@@ -1,14 +1,32 @@
-module.exports = function(sequelize, DataTypes) {
-        var Teacher = sequelize.define("Teacher", {
-          teacherName: DataTypes.STRING,
-          updatedAt: DataTypes.DATE,
-          createdAt: DataTypes.DATE
-        });
-      
-        Teacher.associate = function(models) {
-          Teacher.hasMany(models.Task, {
-            onDelete: "cascade"
-          });
-        };
-        return Teacher;
-      };
+
+module.exports = function(sequelize, DataTypes) {
+
+            const Teacher = sequelize.define('teacher', {
+
+              firstName: { type: DataTypes.STRING},
+
+              lastName: { type: DataTypes.STRING}        
+
+            });
+
+// "joining" the tables with sequelize
+            // Teacher.associate = function(models) {
+            //     Teacher.belongsTo(models.Student, [{ 
+            //       foreignKey: {
+            //         allowNull: false
+            //       }
+            //     }]);
+            //   };
+
+
+              Teacher.associate = function(models) {
+                Teacher.hasMany(models.task, {
+                    onDelete: "cascade"
+                });
+              };
+
+
+              return Teacher;
+
+};
+
