@@ -1,5 +1,10 @@
 import React from "react";
 import "./App.css";
+
+
+
+// require('../daily_schoolar/server.js.js')
+
 import Admin from "./Components/AdminPage/Admin";
 import LoginPage from "./Components/LoginPage/LogIn";
 import Nav from "./Components/Navbar/Nav";
