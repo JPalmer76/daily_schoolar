@@ -2,7 +2,6 @@ import React from "react";
 import "./App.css";
 
 
-require('../daily_schoolar/server.js.js')
 
 import Admin from "./Components/AdminPage/Admin";
 import LoginPage from "./Components/LoginPage/LogIn";
@@ -10,6 +9,7 @@ import Nav from "./Components/Navbar/Nav";
 import Footer from "./Components/Footer/Footer";
 import Student from "./Components/StudentPage/Student"
 import Register from "./Components/RegisterPage/Register";
+
 
 
 
