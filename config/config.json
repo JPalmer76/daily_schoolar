@@ -2,8 +2,8 @@
 
     "development": {
       "username": "root",
-      "password": "chocolateMint",
-      "database": "dailySchoolarDemo",
+      "password": "Bl@ckKitty7",
+      "database": "dailySchoolar",
       "host": "localhost",
       "port": 3306,
       "dialect": "mysql"
