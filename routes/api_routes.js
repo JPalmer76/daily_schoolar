@@ -6,19 +6,19 @@
 
 // const express = require('express')
 // const app = express()
-// const db = require("../");
+const db = require("../models");
 
 
 
 
 module.exports = function(app) {
   // ============================================================
-  //                  Teacher Table api routes
+  //                  teacher Table api routes
   // ============================================================
   
-  // Get route for getting all of the Teachers
+  // Get route for getting all of the teachers
   app.get("/api/teacher", function(req, res) {
-    db.Teacher.findAll({})
+    db.teacher.findAll({})
       .then(function(teacherData) {
         console.log(teacherData);
         res.json(teacherData);
@@ -27,9 +27,9 @@ module.exports = function(app) {
         console.log(error);
       });
   });
-  // Get route for getting one Teacher by ID
+  // Get route for getting one teacher by ID
   app.get("/api/teacher/:id", function(req, res) {
-    db.Teacher.findOne({
+    db.teacher.findOne({
       where: {
         id: req.params.id
       }
@@ -42,9 +42,9 @@ module.exports = function(app) {
         console.log(error);
       });
   });
-  // Delete route for deleting an Teacher by ID
+  // Delete route for deleting an teacher by ID
   app.delete("/api/employees/:id", function(req, res) {
-    db.Teacher.destroy({
+    db.teacher.destroy({
       where: {
         id: req.params.id
       }
@@ -57,9 +57,9 @@ module.exports = function(app) {
         console.log(error);
       });
   });
-  // Post Route for saving a new Teacher
+  // Post Route for saving a new teacher
   app.post("/api/teacher", function(req, res) {
-    db.Teacher.create(req.body)
+    db.teacher.create(req.body)
       .then(function(teacherData) {
         res.json(teacherData);
       })
@@ -67,9 +67,9 @@ module.exports = function(app) {
         console.log(error);
       });
   });
-  // Put route for updating Teacher data
+  // Put route for updating teacher data
   app.put("/api/teacher/:id", function(req, res) {
-    db.Teacher.update(req.body, {
+    db.teacher.update(req.body, {
       where: {
         id: req.params.id
       }
@@ -83,11 +83,11 @@ module.exports = function(app) {
       });
   });
   // ============================================================
-  //                   Task Table api routes
+  //                   task Table api routes
   // ============================================================
-  // Get route for getting all of the Tasks
+  // Get route for getting all of the tasks
   app.get("/api/task", function(req, res) {
-    db.Task.findAll({})
+    db.task.findAll({})
       .then(function(taskData) {
         console.log(taskData);
         res.json(taskData);
@@ -98,7 +98,7 @@ module.exports = function(app) {
   });
   // Get route for getting one project by ID
   app.get("/api/task/:id", function(req, res) {
-    db.Task.findOne({
+    db.task.findOne({
       where: {
         id: req.params.id
       }
@@ -113,7 +113,7 @@ module.exports = function(app) {
   });
   // Delete route for deleting an project by ID
   app.delete("/api/task/:id", function(req, res) {
-    db.Task.destroy({
+    db.task.destroy({
       where: {
         id: req.params.id
       }
@@ -128,7 +128,7 @@ module.exports = function(app) {
   });
   // Post Route for saving a new project
   app.post("/api/task", function(req, res) {
-    db.Task.create(req.body)
+    db.task.create(req.body)
       .then(function(taskData) {
         res.json(taskData);
       })
@@ -138,7 +138,7 @@ module.exports = function(app) {
   });
   // Put route for updating project data
   app.put("/api/task/:id", function(req, res) {
-    db.Task.update(req.body, {
+    db.task.update(req.body, {
       where: {
         id: req.params.id
       }
@@ -152,12 +152,12 @@ module.exports = function(app) {
       });
   });
   // ============================================================
-  //                  Student Table api routes
+  //                  student Table api routes
   // ============================================================
   
-  // Get route for getting all of the Students
+  // Get route for getting all of the students
   app.get("/api/student", function(req, res) {
-    db.Student.findAll({})
+    db.student.findAll({})
       .then(function(studentData) {
         console.log(studentData);
         res.json(studentData);
@@ -196,9 +196,9 @@ module.exports = function(app) {
         console.log(error);
       });
   });
-  // Post Route for creating new Student
+  // Post Route for creating new student
   app.post("/api/student", function(req, res) {
-    db.Student.create(req.body)
+    db.student.create(req.body)
       .then(function(taskData) {
         res.json(taskData);
       })
@@ -208,7 +208,7 @@ module.exports = function(app) {
   });
   // Put route for updating student data
   app.put("/api/student/:id", function(req, res) {
-    db.Student.update(req.body, {
+    db.student.update(req.body, {
       where: {
         id: req.params.id
       }
@@ -223,10 +223,10 @@ module.exports = function(app) {
   });
   app.post("/api/form-data", function(req, res) {
     console.log(req.body);
-    db.Student.create({
+    db.student.create({
       studentName: req.body.hoursWorked
     }).then(function() {
-      db.Task.create({
+      db.task.create({
         taskName: req.body.taskName
       }).then(function() {
         res.send("Success");
@@ -238,7 +238,7 @@ module.exports = function(app) {
   app.get("/api/data", function(req, res) {
     db.sequelize
       .query(
-        "select t.teacherName, t.taskName, s.studentName from Teacher t inner join Task t on t.id = t.teacherId inner join Student s on t.id = s.taskId where t.id =" + req.user.id,{ type: db.Sequelize.QueryTypes.SELECT }
+        "select t.teacherName, t.taskName, s.studentName from teacher t inner join task t on t.id = t.teacherId inner join student s on t.id = s.taskId where t.id =" + req.user.id,{ type: db.Sequelize.QueryTypes.SELECT }
       )
       .then(function(data) {
         console.log(data)
