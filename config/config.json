@@ -2,9 +2,9 @@
 
     "development": {
       "username": "root",
-      "password": "chocolateMint",
-      "database": "dailySchoolarDemo",
-      "host": "localhost",
+      "password": "password",
+      "database": "daily_schoolar_local",
+      "host": "127.0.0.1",
       "port": 3306,
       "dialect": "mysql"
     },
