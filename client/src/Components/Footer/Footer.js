@@ -6,7 +6,7 @@ export default class Footer extends Component {
   render() {
     return (
       <footer class="page-footer">
-        © 2014 Copyright Text
+        © 2019 Copyright Text
       </footer>
     );
   }

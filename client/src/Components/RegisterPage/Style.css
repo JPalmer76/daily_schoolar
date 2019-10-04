@@ -5,3 +5,7 @@ form {
 #checkbox {
     display: inline;
 }
+
+.btn {
+    margin-left: 800px;
+}

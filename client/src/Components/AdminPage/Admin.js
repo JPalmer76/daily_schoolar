@@ -9,9 +9,8 @@ export default class Admin extends Component {
     <div class="col s12 ">
       <div class="card blue-grey darken-1">
         <div class="card-content white-text">
-          <span class="card-title">Card Title</span>
-          <p>I am a very simple card. I am good at containing small bits of information.
-          I am convenient because I require little markup to use effectively.</p>
+          <span class="card-title">Assign tasks</span>
+          <p>Use the form below to assign tasks to your kiddos!</p>
         </div>
       </div>
     </div>
