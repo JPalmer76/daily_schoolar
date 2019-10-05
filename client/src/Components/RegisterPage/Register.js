@@ -44,11 +44,11 @@ export default class Register extends Component {
           
         </form>
         <form  action="filled-in">
+            <h5>Are you a Teacher?</h5>
           <p>
               
-            <h5>Are you a Teacher?</h5>
             <label>
-              <input id="checkbox" type="checkbox" class="filled-in" checked="checked" />
+              <input id="checkbox" type="checkbox" class="filled-in"  />
               <span></span>
             </label>
             
