@@ -24,13 +24,8 @@ function App() {
      {/* </div> */}
        <div>
         {/* <Admin /> */}
-<<<<<<< HEAD
-        <Student />
-        {/* <Register /> */}
-=======
         {/* <Student /> */}
         <Register />
->>>>>>> origin
      <Footer />
      </div> 
      </wrapper>  
