@@ -2,14 +2,9 @@
 
     "development": {
       "username": "root",
-
-      "password": "Bl@ckKitty7",
-      "database": "dailySchoolar",
-      "host": "localhost",
-      "password": "password",
+      "password": "Jaydenis17",
       "database": "daily_schoolar_local",
-      "host": "127.0.0.1",
-
+      "host": "localhost",
       "port": 3306,
       "dialect": "mysql"
     },
