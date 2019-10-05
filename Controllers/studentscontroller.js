@@ -9,6 +9,14 @@ postStudent: (req, res) => {
     }).catch(err => {
         res.json(err)
     })
-    }
+    },
+    
+retrieveStudent: (req, res) => {
+    db.student.findAll().then(dbStudent => {
+    res.json(dbStudent)
+}).catch(err => {
+    res.json(err)
+})
+}
 
 }
