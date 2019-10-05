@@ -22,10 +22,13 @@ const db = require("./models");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+// grabbing from the routes folder
+require('../daily_schoolar/routes/html_routes')(app);
+require('../daily_schoolar/routes/api_routes')(app);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
-db.sequelize.sync({ force: true }).then(function() {
+db.sequelize.sync().then(function() {
     app.listen(PORT, function() {
       console.log("App listening on PORT " + PORT);
     });

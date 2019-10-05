@@ -16,7 +16,7 @@ import Register from "./Components/RegisterPage/Register";
 
 function App() {
   return (
-    <wrapper>
+    <Wrapper>
 
     <div>
     <Nav /> 
@@ -30,7 +30,7 @@ function App() {
         <Register />
      <Footer />
      </div> 
-     </wrapper>
+     </Wrapper>
    
     
 
