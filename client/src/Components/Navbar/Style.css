@@ -4,9 +4,17 @@
 }
 
 nav {
-    color: #fff;
+    color: black;
     background: linear-gradient(to bottom right,#89b5ab, #56867a);
-    font-family: 'Pacifico', cursive;
+    font-family: 'Open Sans', sans-serif;
     background-image: url("../../images/kids6.jpg");
     height: 280px;
+}
+
+.navfont {
+    color: black;
+}
+
+#navfont1 {
+    color: black;
 }
