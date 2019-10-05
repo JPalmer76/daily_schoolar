@@ -23,9 +23,9 @@ function App() {
      {/* <LoginPage /> */}
      {/* </div> */}
        <div>
-        <Admin />
+        {/* <Admin /> */}
         {/* <Student /> */}
-        {/* <Register /> */}
+        <Register />
      <Footer />
      </div> 
      </wrapper>  
