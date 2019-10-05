@@ -41,7 +41,7 @@ export default class Admin extends Component {
       <label for="password">Password</label>
     </div>
   </div>
-  <button class="btn waves-effect waves-light" type="submit" name="action">submit</button>
+  <button class="btn waves-effect" type="submit" name="action">submit</button>
 </form>
 </form>
 </container>
