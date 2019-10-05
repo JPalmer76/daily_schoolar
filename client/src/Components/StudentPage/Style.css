@@ -1,21 +1,25 @@
 .card {
     height:100px;
 }
-
 .topic {
     height: 20px;
     width: 240px;
     margin-left: 20px;
 }
-
 .displayBox {
     border: 1px solid black;
     width: 1060px;
     height: 260px;
     margin-left: 20px;
 }
-
 .list {
     padding: 5px;
     margin-left: 8px;
 }
+
+body { 
+     background-color: #cccccc8f;
+    font-family: 'Pacifico', cursive;
+    background-image: url("../../images/pencils.jpg")
+   }
+

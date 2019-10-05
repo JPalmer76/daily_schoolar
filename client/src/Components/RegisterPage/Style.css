@@ -9,3 +9,10 @@ form {
 .btn {
     margin-left: 800px;
 }
+
+body { 
+
+    background-image: "/client/src/images/background-border-brown-628241.jpg";
+    background-color: #cccccc8f;
+    font-family: 'Pacifico', cursive;
+   }
