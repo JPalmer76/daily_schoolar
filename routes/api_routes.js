@@ -43,7 +43,7 @@ module.exports = function(app) {
       });
   });
   // Delete route for deleting an teacher by ID
-  app.delete("/api/employees/:id", function(req, res) {
+  app.delete("/api/teacher/:id", function(req, res) {
     db.teacher.destroy({
       where: {
         id: req.params.id
@@ -168,7 +168,7 @@ module.exports = function(app) {
   });
   // Get route for retrieving student data by ID
   app.get("/api/student/:id", function(req, res) {
-    db.Hour.findOne({
+    db.student.findOne({
       where: {
         id: req.params.id
       }
@@ -183,7 +183,7 @@ module.exports = function(app) {
   });
   // Delete route for deleting student data by ID
   app.delete("/api/student/:id", function(req, res) {
-    db.Hour.destroy({
+    db.student.destroy({
       where: {
         id: req.params.id
       }
@@ -224,7 +224,7 @@ module.exports = function(app) {
   app.post("/api/form-data", function(req, res) {
     console.log(req.body);
     db.student.create({
-      studentName: req.body.hoursWorked
+      studentName: req.body.studentName
     }).then(function() {
       db.task.create({
         taskName: req.body.taskName
