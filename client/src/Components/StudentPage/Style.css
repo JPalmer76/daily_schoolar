@@ -1,5 +1,10 @@
 .card {
     height:100px;
+    width: 860px;
+    opacity: 0.7;   
+}
+p {
+    color: black;
 }
 .topic {
     height: 20px;
@@ -7,10 +12,11 @@
     margin-left: 20px;
 }
 .displayBox {
-    border: 1px solid black;
-    width: 1060px;
+    
+    width: 850px;
     height: 260px;
     margin-left: 20px;
+
 }
 .list {
     padding: 5px;

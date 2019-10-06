@@ -43,10 +43,10 @@ export default class Register extends Component {
   render() {
     return (
       <div class="row">
-        <form class="col s12">
+        <form class="lines" class="col s12">
           <div class="row">
             <div class="input-field col s6">
-              <input
+              <input 
                 placeholder="First Name"
                 id="first_name"
                 value={this.firstName}
@@ -85,11 +85,11 @@ export default class Register extends Component {
         </form>
         <form  action="filled-in">            
         
-        <h5>Are you a Teacher?</h5>
+        <h5 class="checkbox">Are you a Teacher?</h5>
 
           <p>      
-            <label>
-              <input id="checkbox" type="checkbox" class="filled-in"  />
+            <label class="box">
+              <input  type="checkbox" class="filled-in"  />
               <span></span>
             </label>
             
