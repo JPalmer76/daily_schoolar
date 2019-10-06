@@ -2,7 +2,13 @@ import React from "react";
 import "./App.css";
 
 
+
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
+
+// require('../daily_schoolar/server.js.js')
+
+
 import Admin from "./Components/AdminPage/Admin";
 import LoginPage from "./Components/LoginPage/LogIn";
 import Nav from "./Components/Navbar/Nav";
@@ -14,28 +20,41 @@ import Register from "./Components/RegisterPage/Register";
 
 
 
+
+
 function App() {
   return (
-    <Router>
 
-    <div>
-    <Nav /> 
-     {/* </div> */}
+    // <Router>
+
+    // <div>
+    // <Nav /> 
+    //  {/* </div> */}
+
      
-     {/* <LoginPage /> */}
+    //  {/* <LoginPage /> */}
      
-       {/* <div> */}
-       <Switch>
-          <Route exact path= "/" component={LoginPage} />
-          <Route exact path= "/" component={Register} />
-          <Route exact path= "/" component={Footer}/>
-        </Switch>
-        {/* <Register />
-     <Footer /> */}
-     </div> 
-     </Router>
+    //    {/* <div> */}
+    //    <Switch>
+    //       <Route exact path= "/" component={LoginPage} />
+    //       <Route exact path= "/" component={Register} />
+    //       <Route exact path= "/" component={Footer}/>
+    //     </Switch>
+    //     {/* <Register />
+    //  <Footer /> */}
+    //  </div> 
+    //  </Router>
    
-    
+    <wrapper>
+
+       <div>
+        <Admin />
+        {/* <Student /> */}
+        {/* <Register /> */}
+     <Footer />
+     </div> 
+     </wrapper>  
+
 
   );
 }

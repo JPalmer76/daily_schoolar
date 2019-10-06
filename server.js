@@ -16,6 +16,9 @@ const PORT = process.env.PORT || 8080;
 // Requiring our models for syncing
 const db = require("./models");
 
+const routes = require("./routes");
+const cors = require("cors");
+
 
 
 // Sets up the Express app to handle data parsing
@@ -25,6 +28,11 @@ app.use(express.json());
 // grabbing from the routes folder
 require('../daily_schoolar/routes/html_routes')(app);
 require('../daily_schoolar/routes/api_routes')(app);
+
+// require('../daily_schoolar/routes/html_routes')(app);
+// require('../daily_schoolar/routes/api_routes')(app);
+
+app.use(routes);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================

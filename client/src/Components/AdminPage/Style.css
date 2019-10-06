@@ -1,5 +1,5 @@
 .card {
-    height:260px;
+    height:100px;   
 }
 
 #textarea2 {
@@ -8,6 +8,13 @@
 
 #input_text {
     margin-left: 20px;
+}
+
+.blue-grey.darken-1 {
+    background-color: #546e7a79 !important;
+}
+.body {
+    font-family: 'Pacifico', cursive;
 }
 
 

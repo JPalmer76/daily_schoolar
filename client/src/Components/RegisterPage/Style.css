@@ -1,7 +1,15 @@
-form {
-   margin-left: 100px;
+body {
+    width: 750px;
 }
 
-#checkbox {
-    display: inline;
+.btn {
+    margin-left: 650px;
+}
+
+.checkbox {
+    margin-left: 60px;
+}
+
+.box {
+    margin-left: 290px;
 }

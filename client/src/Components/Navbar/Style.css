@@ -1,3 +1,26 @@
 .nav-wrapper {
     margin-top: -100px;
+    height: 280px;
+    width: 1050px;
+
+}
+
+nav {
+    color: black;
+    background: linear-gradient(to bottom right,#89b5ab, #56867a);
+    font-family: 'Open Sans', sans-serif;
+    background-image: url("../../images/kids6.jpg");
+    height: 280px;
+    width: 1150px;
+    
+}
+
+.navfont {
+    color: black;
+   
+}
+
+#navfont1 {
+    color: black;
+    margin-left: 30px;
 }
