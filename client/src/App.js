@@ -3,7 +3,7 @@ import "./App.css";
 
 
 
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+// import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 
 // require('../daily_schoolar/server.js.js')
@@ -48,6 +48,7 @@ function App() {
     <wrapper>
 
        <div>
+         <Nav />
         <Admin />
         {/* <Student /> */}
         {/* <Register /> */}
