@@ -14,21 +14,24 @@ import Register from "./Components/RegisterPage/Register";
 
 function App() {
   return (
-    <wrapper>
+    <Router>
 
     <div>
     <Nav /> 
-     </div>
-     {/* <div> */}
-     {/* <LoginPage /> */}
      {/* </div> */}
-       <div>
-        <Admin />
-        {/* <Student /> */}
-        {/* <Register /> */}
-     <Footer />
+     
+     {/* <LoginPage /> */}
+     
+       {/* <div> */}
+       <Switch>
+          <Route exact path= "/" component={LoginPage} />
+          <Route exact path= "/" component={Register} />
+          <Route exact path= "/" component={Footer}/>
+        </Switch>
+        {/* <Register />
+     <Footer /> */}
      </div> 
-     </wrapper>  
+     </Router>
 
   );
 }
