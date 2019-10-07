@@ -2,6 +2,31 @@ import React, { Component } from 'react';
 import "./Style.css";
 
 export default class Admin extends Component {
+
+  state = {
+    topic: "",
+    message: ""
+  }
+
+  handleInputChange = event => {
+    const { name, value } = event.target;
+
+    this.setState({
+      [name]: value
+    })
+  };
+
+  handleFormSubmit = event => {
+    event.preventDefault();
+
+    alert(`${this.state.topic} ${this.state.message}`);
+
+    this.setState({
+      topic: "",
+      message: ""
+    });
+  };
+
   render() {
     return (
       <wrapper>
@@ -51,20 +76,20 @@ export default class Admin extends Component {
       <form class="col s12">
         <div class="row">
           <div class="input-field col s3">
-            <input id="input_text" type="text" data-length="10" />
+            <input name="topic" value={this.topic} onChange={this.handleInputChange} id="input_text" type="text" data-length="50" />
             <label id="input_text" for="input_text">Input text</label>
           
         </div>
         <div class="row">
           <div class="input-field col s8">
-            <textarea id="textarea2" class="materialize-textarea" data-length="120"></textarea>
+            <textarea name="message" value={this.message} onChange={this.handleInputChange} id="textarea2" class="materialize-textarea" data-length="255"></textarea>
             <label id="textarea2" for="textarea2">Textarea</label>
           </div>
         </div>
         </div>
       </form>
     </div>
-    <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+    <button onClick={this.handleFormSubmit} class="btn waves-effect waves-light" type="submit" name="action">Submit
     
   </button>
   

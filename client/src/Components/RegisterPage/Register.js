@@ -34,7 +34,7 @@ export default class Register extends Component {
       email: "",
       password: "",
       rePassword: ""
-    })
+    });
     
     
     
