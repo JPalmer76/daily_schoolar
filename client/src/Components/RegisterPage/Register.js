@@ -1,6 +1,7 @@
 import "./Style.css";
 
 import React, { Component } from "react";
+import API from "../../utils/API";
 
 export default class Register extends Component {
 
@@ -25,6 +26,17 @@ export default class Register extends Component {
   handleFormSubmit = event => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     event.preventDefault();
+    var studentInfo = {
+      firstName: this.state.firstName,
+      lastName: this.state.lastName,
+      email: this.state.email,
+      password: this.state.password
+      // rePassword: this.state.rePassword
+    }
+    console.log("studentInfo from resister.js file: " +JSON.stringify(studentInfo))
+    API.saveStudent(studentInfo).then(res => {
+      console.log("studen info saved to DB")
+    })
 
     // Alert the user their first and last name, clear `this.state.firstName` and `this.state.lastName`, clearing the inputs
     alert(`${this.state.firstName} ${this.state.lastName} ${this.state.email} ${this.state.password} ${this.state.rePassword}`);
