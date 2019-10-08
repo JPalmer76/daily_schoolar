@@ -4,6 +4,7 @@ import React, { Component } from "react";
 
 export default class Register extends Component {
 
+
   state = {
     firstName: "",
     lastName: "",
@@ -40,62 +41,59 @@ export default class Register extends Component {
     
     
   };
+
   render() {
     return (
-      <div class="row">
-        <form class="lines" class="col s12">
-          <div class="row">
-            <div class="input-field col s6">
-              <input 
-                placeholder="First Name"
+      <div className="row">
+        <form className="col s12">
+          <div className="row">
+            <div className="input-field col s6">
+              <input
+                placeholder="Placeholder"
                 id="first_name"
-                value={this.firstName}
-                name="firstName"
-                onChange={this.handleInputChange}
                 type="text"
-                class="validate"
+                className="validate"
               />
-              <label htmlfor="first_name">First Name</label>
+              <label htmlFor="first_name">First Name</label>
             </div>
-            <div class="input-field col s6">
-              <input placeholder="Last Name" value={this.lastName} name="lastName" onChange={this.handleInputChange} id="last_name" type="text" class="validate" />
-              <label htmlfor="last_name">Last Name</label>
+            <div className="input-field col s6">
+              <input id="last_name" type="text" className="validate" />
+              <label htmlFor="last_name">Last Name</label>
             </div>
           </div>
 
-          <div class="row">
-            <div class="input-field col s12">
-              <input placeholder="Enter your email" value={this.email} name="email" onChange={this.handleInputChange} id="Email" type="Email" class="validate" />
-              <label for="Email">Email</label>
+          <div className="row">
+            <div className="input-field col s12">
+              <input id="Email" type="Email" className="validate" />
+              <label htmlFor="Email">Email</label>
             </div>
           </div>
-          <div class="row">
-            <div class="input-field col s12">
-              <input  type="password" name="password" onChange={this.handleInputChange} value={this.password} class="validate" />
-              <label htmlfor="password">Password</label>
+          <div className="row">
+            <div className="input-field col s12">
+              <input id="password" type="password" className="validate" />
+              <label htmlFor="password">Password</label>
             </div>
           </div>
-          <div class="row">
-            <div class="input-field col s12">
-              <input name="rePassword" value={this.rePassword} onChange={this.handleInputChange} id="re-password" type="password" class="validate" />
-              <label htmlfor="password">Re-Enter Password</label>
+          <div className="row">
+            <div className="input-field col s12">
+              <input id="password" type="password" className="validate" />
+              <label htmlFor="password">Re-Enter Password</label>
             </div>
           </div>
           
         </form>
-        <form  action="filled-in">            
-        
-        <h5 class="checkbox">Are you a Teacher?</h5>
-
-          <p>      
-            <label class="box">
-              <input  type="checkbox" class="filled-in"  />
+        <form  action="filled-in">
+            <h5>Are you a Teacher?</h5>
+          <p>
+              
+            <label>
+              <input id="checkbox" type="checkbox" className="filled-in"  />
               <span></span>
             </label>
             
           </p>
         </form>
-        <button className="btn waves-effect waves-light" type="submit" onClick={this.handleFormSubmit}
+        <button className="btn waves-effect waves-light" type="submit" onClick={function() {alert('Was clicked')}}
             >Submit</button>
       </div>
       

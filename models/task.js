@@ -22,11 +22,11 @@ module.exports = function(sequelize, DataTypes) {
           Task.associate = function(models) {[
             Task.belongsTo(models.student, {
               foreignKey: {
-                allowNull: false
+                allowNull: false, targetKey: "studentId"
               }  
             }), Task.belongsTo(models.teacher, {
               foreignKey: {
-                allowNull: false
+                allowNull: false, targetKey: "teacherId"
               }
             }) ]
           }
