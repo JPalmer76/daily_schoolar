@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import "./Style.css";
 
+
 export default class Admin extends Component {
 
-  state = {
+    state = {
     topic: "",
     message: ""
   }
 
-  handleInputChange = event => {
+  grabTopic = event => {
     const { name, value } = event.target;
 
     this.setState({
@@ -66,13 +67,17 @@ export default class Admin extends Component {
       <form class="col s12">
         <div class="row">
           <div class="input-field col s3">
-            <input name="topic" value={this.topic} onChange={this.handleInputChange} id="input_text" type="text" data-length="50" />
+
+            <input name="topic" value={this.topic} onChange={this.grabTopic} id="input_text" type="text" data-length="50" />
+
             <label id="input_text" for="input_text">Subject</label>
           
         </div>
         <div class="row">
           <div class="input-field col s8">
-            <textarea name="message" value={this.message} onChange={this.handleInputChange} id="textarea2" class="materialize-textarea" data-length="255"></textarea>
+
+            <textarea name="message" value={this.message} onChange={this.grabTopic} id="textarea2" class="materialize-textarea" data-length="255"></textarea>
+
             <label id="textarea2" for="textarea2">Task(s)</label>
           </div>
         </div>
