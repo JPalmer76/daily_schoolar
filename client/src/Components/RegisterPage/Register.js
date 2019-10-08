@@ -3,6 +3,45 @@ import "./Style.css";
 import React, { Component } from "react";
 
 export default class Register extends Component {
+
+
+  state = {
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: ""
+    
+  }
+
+  handleInputChange = event => {
+    const { name, value } = event.target;
+
+    this.setState({
+      [name]: value,
+      
+    });
+    
+  };
+
+  handleFormSubmit = event => {
+    // Preventing the default behavior of the form submit (which is to refresh the page)
+    event.preventDefault();
+
+    // Alert the user their first and last name, clear `this.state.firstName` and `this.state.lastName`, clearing the inputs
+    alert(`${this.state.firstName} ${this.state.lastName} ${this.state.email} ${this.state.password} ${this.state.rePassword}`);
+    this.setState({
+      firstName: "",
+      lastName: "",
+      email: "",
+      password: "",
+      rePassword: ""
+    });
+    
+    
+    
+    
+  };
+
   render() {
     return (
       <div className="row">

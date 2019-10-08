@@ -7,7 +7,8 @@ export default class Footer extends Component {
     return (
 
       <footer class="page-footer">
-        © 2019 Copyright Text
+
+        © 2019 Schoolar Development
 
       </footer>
     );
