@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import "./Style.css";
-
+import axios from "axios";
 
 export default class Admin extends Component {
 
@@ -20,13 +20,20 @@ export default class Admin extends Component {
   handleFormSubmit = event => {
     event.preventDefault();
 
-    alert(`${this.state.topic} ${this.state.message}`);
+     alert(`${this.state.topic} ${this.state.message}`);
+
+axios.post("/api/tasks")
 
     this.setState({
       topic: "",
       message: ""
     });
   };
+
+
+  // grabbing value for the student to assign task to
+  handleChange:function(e){
+    this.setState({selectValue:e.target.value});
 
   render() {
     return (
