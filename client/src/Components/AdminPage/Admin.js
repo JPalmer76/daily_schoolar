@@ -61,29 +61,19 @@ export default class Admin extends Component {
   </select>
   </div>
   </div>
-  <div class="row">
-    <div class="col s5 ">
-  <label>Browser Select</label>
-  <select class="browser-default">
-    <option value="" disabled selected>Choose your option</option>
-    <option value="1">Option 1</option>
-    <option value="2">Option 2</option>
-    <option value="3">Option 3</option>
-  </select>
-  </div>
-  </div>
+  
   <div class="row">
       <form class="col s12">
         <div class="row">
           <div class="input-field col s3">
             <input name="topic" value={this.topic} onChange={this.handleInputChange} id="input_text" type="text" data-length="50" />
-            <label id="input_text" for="input_text">Input text</label>
+            <label id="input_text" for="input_text">Subject</label>
           
         </div>
         <div class="row">
           <div class="input-field col s8">
             <textarea name="message" value={this.message} onChange={this.handleInputChange} id="textarea2" class="materialize-textarea" data-length="255"></textarea>
-            <label id="textarea2" for="textarea2">Textarea</label>
+            <label id="textarea2" for="textarea2">Task(s)</label>
           </div>
         </div>
         </div>
