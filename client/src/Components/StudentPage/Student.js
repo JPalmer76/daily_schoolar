@@ -11,7 +11,7 @@ export default class Student extends Component {
           <div class="col s12 ">
             <div class="card blue-grey darken-0">
               <div  class="card-content black-text">
-                <span class="card-title">What I did today....</span>
+                <span class="card-title">Homeschool To Do list...</span>
                 <p>
                   Enter the things you did today in the spaces below.</p>
               </div>

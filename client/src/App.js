@@ -15,20 +15,19 @@ import Register from "./Components/RegisterPage/Register";
 function App() {
   return (
     <wrapper>
-
-    <div>
-    <Nav /> 
-     </div>
-     {/* <div> */}
-     {/* <LoginPage /> */}
-     {/* </div> */}
-       <div>
+      <div>
+        <Nav />
+      </div>
+      {/* <div> */}
+      {/* <LoginPage /> */}
+      {/* </div> */}
+      <div>
         <Admin />
         {/* <Student /> */}
         {/* <Register /> */}
-     <Footer />
-     </div> 
-     </wrapper>  
+        <Footer />
+      </div>
+    </wrapper>
 
   );
 }
