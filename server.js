@@ -25,6 +25,9 @@ const cors = require("cors");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+// grabbing from the routes folder
+require('../daily_schoolar/routes/html_routes')(app);
+require('../daily_schoolar/routes/api_routes')(app);
 
 // require('../daily_schoolar/routes/html_routes')(app);
 // require('../daily_schoolar/routes/api_routes')(app);

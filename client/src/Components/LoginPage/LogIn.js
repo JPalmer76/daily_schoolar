@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import "./Style.css";
 
+
 export default class Admin extends Component {
+
+
   render() {
     return (
       <container>
@@ -23,7 +26,7 @@ export default class Admin extends Component {
           <label for="password">Password</label>
         </div>
       </div>
-      <button class="btn waves-effect waves-light" type="submit" name="action">Submit</button>
+      <button class="button" class="btn waves-effect waves-light" type="submit" name="action">Submit</button>
   
   <form className="col s6">
   <h3 id="adminTitle">Student Login</h3>
@@ -41,7 +44,7 @@ export default class Admin extends Component {
       <label for="password">Password</label>
     </div>
   </div>
-  <button class="btn waves-effect" type="submit" name="action">submit</button>
+  <button class="button" class="btn waves-effect" type="submit" name="action">submit</button>
 </form>
 </form>
 </container>

@@ -6,7 +6,9 @@
 
 // const express = require('express')
 // const app = express()
+
 const db = require("../models");
+
 
 
 
@@ -42,7 +44,9 @@ module.exports = function(app) {
         console.log(error);
       });
   });
+
   // Delete route for deleting an teacher by ID
+
   app.delete("/api/teacher/:id", function(req, res) {
     db.teacher.destroy({
       where: {
@@ -96,7 +100,7 @@ module.exports = function(app) {
         console.log(error);
       });
   });
-  // Get route for getting one project by ID
+  // Get route for getting one task by ID
   app.get("/api/task/:id", function(req, res) {
     db.task.findOne({
       where: {
@@ -111,7 +115,7 @@ module.exports = function(app) {
         console.log(error);
       });
   });
-  // Delete route for deleting an project by ID
+  // Delete route for deleting an task by ID
   app.delete("/api/task/:id", function(req, res) {
     db.task.destroy({
       where: {
@@ -126,8 +130,11 @@ module.exports = function(app) {
         console.log(error);
       });
   });
-  // Post Route for saving a new project
+
+  // Post Route for saving a new task
   app.post("/api/task", function(req, res) {
+
+    console.log(req.body)
     db.task.create(req.body)
       .then(function(taskData) {
         res.json(taskData);
@@ -136,7 +143,7 @@ module.exports = function(app) {
         console.log(error);
       });
   });
-  // Put route for updating project data
+  // Put route for updating task data
   app.put("/api/task/:id", function(req, res) {
     db.task.update(req.body, {
       where: {
@@ -224,7 +231,9 @@ module.exports = function(app) {
   app.post("/api/form-data", function(req, res) {
     console.log(req.body);
     db.student.create({
+
       studentName: req.body.studentName
+
     }).then(function() {
       db.task.create({
         taskName: req.body.taskName
