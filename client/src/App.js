@@ -14,7 +14,7 @@ import LoginPage from "./Components/LoginPage/LogIn";
 import Nav from "./Components/Navbar/Nav";
 import Footer from "./Components/Footer/Footer";
 import Student from "./Components/StudentPage/Student"
-import Register from "./Components/RegisterPage/Register";
+import Register from "./Components/RegisterPage/RegisterPage";
 
 
 
@@ -49,9 +49,9 @@ function App() {
 
        <div>
          <Nav />
-        <Admin />
+        {/* <Admin /> */}
         {/* <Student /> */}
-        {/* <Register /> */}
+        <Register />
      <Footer />
      </div> 
      </wrapper>  

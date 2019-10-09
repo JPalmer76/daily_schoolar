@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import "./Style.css";
-import axios from "axios";
+// import axios from "axios";
 
 export default class Admin extends Component {
 
     state = {
     topic: "",
     message: ""
+
   }
 
   grabTopic = event => {
@@ -20,20 +21,21 @@ export default class Admin extends Component {
   handleFormSubmit = event => {
     event.preventDefault();
 
-     alert(`${this.state.topic} ${this.state.message}`);
+    //  alert(`${this.state.topic} ${this.state.message}`);
 
-axios.post("/api/tasks")
+// axios.post("/api/tasks")
 
     this.setState({
       topic: "",
-      message: ""
+      message: "",
+      student: ""
     });
   };
 
 
   // grabbing value for the student to assign task to
-  handleChange:function(e){
-    this.setState({selectValue:e.target.value});
+  // handleChange: (e) =>({
+  //   this.setState({selectValue:e.target.value});
 
   render() {
     return (
@@ -48,16 +50,20 @@ axios.post("/api/tasks")
       </div>
     </div>
   </div>
+
+  {/* assigning the student */}
   <div class="row">
     <div class="col s5 ">
   <label>Student Select</label>
-  <select class="browser-default">
+  <select name="student" value={this.state.selectValue}  onChange={this.handleChange}  class="browser-default">
     <option value="" disabled selected>Choose your Student</option>
     <option value="1">Jayden</option>
     <option value="2">Bejamin</option>
     <option value="3">Elliott</option>
   </select>
   </div>
+
+  {/* assigning  to student */}
   <div class="col s1 "></div>
   <div class="col s5 ">
   <label>Topic Select</label>
