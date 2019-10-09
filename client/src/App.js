@@ -47,14 +47,24 @@ function App() {
    
     <wrapper>
 
+      <div>
+        <Nav />
+      </div>
+      {/* <div> */}
+      {/* <LoginPage /> */}
+      {/* </div> */}
+      <div>
+
+
        <div>
          <Nav />
+
         <Admin />
         {/* <Student /> */}
         {/* <Register /> */}
-     <Footer />
-     </div> 
-     </wrapper>  
+        <Footer />
+      </div>
+    </wrapper>
 
 
   );
