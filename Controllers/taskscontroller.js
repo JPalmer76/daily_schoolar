@@ -4,6 +4,7 @@ module.exports = {
   
   // Post Route for saving a new task
   postTask: (req, res) => {
+<<<<<<< HEAD
     db.task.create(req.body).then(dbTask => {
       console.log(dbTask)  
       res.json(dbTask);
@@ -34,5 +35,30 @@ module.exports = {
   //       console.log(error);
   //     });
   // })
+=======
+    db.task.create(req.body)
+      .then(function(taskData) {
+        res.json(taskData);
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+  },
+  // Put route for updating  data
+  upTask: (req, res) => {
+    db.task.update(req.body, {
+      where: {
+        id: req.params.id
+      }
+    })
+      .then(function(taskData) {
+        console.log(taskData);
+        res.json(req.body);
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+  }
+>>>>>>> origin
 
-} 
+}; 
