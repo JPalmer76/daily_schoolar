@@ -44,39 +44,19 @@ function App() {
     //  <Footer /> */}
     //  </div> 
     //  </Router>
-   
-    <wrapper>
-
-      <div>
-        <Nav />
-      </div>
-      {/* <div> */}
+<wrapper>
+  <div>
+    <Nav />
+  </div>
+    <div>
       {/* <LoginPage /> */}
-      {/* </div> */}
-      <div>
-
-
-       <div>
-         <Nav />
-
-        {/* <Admin /> */}
-        {/* <Student /> */}
-        <Register />
-     <Footer />
-     </div> 
-     </wrapper>  
-
-
-        <Admin />
-        {/* <Student /> */}
-        {/* <Register /> */}
-        <Footer />
-      </div>
+      {/* <Admin /> */}
+      {/* <Student /> */}
+      <Register />
+    </div>
+    <Footer />
     </wrapper>
-
-
-
-  );
+   );
 }
 
 export default App;
