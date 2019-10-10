@@ -31,9 +31,9 @@ function App() {
     // <Nav /> 
     //  {/* </div> */}
 
-     
+
     //  {/* <LoginPage /> */}
-     
+
     //    {/* <div> */}
     //    <Switch>
     //       <Route exact path= "/" component={LoginPage} />
@@ -44,41 +44,32 @@ function App() {
     //  <Footer /> */}
     //  </div> 
     //  </Router>
-   
     <wrapper>
-
       <div>
         <Nav />
       </div>
-      {/* <div> */}
-      {/* <LoginPage /> */}
-      {/* </div> */}
       <div>
-
-
-       <div>
-<<<<<<< HEAD
-=======
-         <Nav />
-
->>>>>>> origin
+        {/* <LoginPage /> */}
+      {/* </div> */}
+        <div>
+          <div>
+            {/* <Admin /> */}
+            {/* <Student /> */}
+            <Register />
+            {/* <Footer /> */}
+          </div>
+          {/* <Admin /> */}
+          {/* <Student /> */}
+          {/* <Register /> */}
+          {/* <Footer /> */}
+        </div>
         {/* <Admin /> */}
         {/* <Student /> */}
         <Register />
-     <Footer />
-     </div> 
-     </wrapper>  
-
-
-        <Admin />
-        {/* <Student /> */}
-        {/* <Register /> */}
-        <Footer />
       </div>
+      <Footer />
+
     </wrapper>
-
-
-
   );
 }
 

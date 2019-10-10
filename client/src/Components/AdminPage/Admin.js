@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import "./Style.css";
-// import axios from "axios";
+import axios from "axios";
 
 export default class Admin extends Component {
 
@@ -10,7 +10,7 @@ export default class Admin extends Component {
 
   }
 
-  grabTopic = event => {
+  handleInputChange = event => {
     const { name, value } = event.target;
 
     this.setState({
@@ -25,11 +25,23 @@ export default class Admin extends Component {
 
 // axios.post("/api/tasks")
 
-    this.setState({
-      topic: "",
-      message: "",
-      student: ""
-    });
+this.setState({
+  topic: document.getElementById("input_text").value,
+  message: document.getElementById("textarea").value
+  
+});
+
+var config = {
+  headers: {'Access-Control-Allow-Origin': '*'}
+};
+
+axios.post("/api/tasks",
+{topic: this.state.topic, message: this.state.message}, config)
+.then(res =>{
+  console.log(res)
+}).catch(err =>{
+  console.log(err)
+});
   };
 
 
@@ -66,12 +78,12 @@ export default class Admin extends Component {
   {/* assigning  to student */}
   <div class="col s1 "></div>
   <div class="col s5 ">
-  <label>Topic Select</label>
+  <label>Teacher</label>
   <select class="browser-default">
     <option value="" disabled selected>Choose your Topic</option>
-    <option value="1">Academics</option>
-    <option value="2">Chores</option>
-    <option value="3">Physical Activities</option>
+    <option value="1"></option>
+    <option value="2"></option>
+    <option value="3"></option>
   </select>
   </div>
   </div>
@@ -83,21 +95,21 @@ export default class Admin extends Component {
 
             <input name="topic" value={this.topic} onChange={this.grabTopic} id="input_text" type="text" data-length="50" />
 
-            <label id="input_text" for="input_text">Subject</label>
+            <label id="input_text" htmlfor="input_text">Subject</label>
           
         </div>
         <div class="row">
           <div class="input-field col s8">
 
-            <textarea name="message" value={this.message} onChange={this.grabTopic} id="textarea2" class="materialize-textarea" data-length="255"></textarea>
+            <textarea name="message" value={this.message} onChange={this.grabTopic} id="textarea" class="materialize-textarea" data-length="255" />
 
-            <label id="textarea2" for="textarea2">Task(s)</label>
+            <label id="textarea" htmlfor="textarea">Task(s)</label>
           </div>
         </div>
         </div>
       </form>
     </div>
-    <button onClick={this.handleFormSubmit} class="btn waves-effect waves-light" type="submit" name="action">Submit
+    <button  className="btn waves-effect waves-light" type="submit" onClick={this.handleFormSubmit}>Submit
     
   </button>
   

@@ -9,7 +9,7 @@ export default class Nav extends Component {
         <nav>
 
     <div class="nav-wrapper">
-      <a href="#" id="navfont1" class="brand-logo">Daily Schoolar</a>
+      <a  id="navfont1" class="brand-logo">Daily Schoolar</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a class="navfont" href="sass.html">Home</a></li>
         <li><a class="navfont" href="badges.html">Something</a></li>
