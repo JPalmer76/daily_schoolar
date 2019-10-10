@@ -1,4 +1,4 @@
-const db = require("../models")  
+const db = require("../models")
 
 module.exports = {
 
@@ -11,13 +11,13 @@ postStudent: (req, res) => {
         res.json(err)
     })
     },
-    
-retrieveStudent: (req, res) => {
-    db.student.findAll().then(dbStudent => {
-    res.json(dbStudent)
-}).catch(err => {
-    res.json(err)
-})
-}
+
+    retrieveStudent: (req, res) => {
+        db.Student.findAll().then(dbStudent => {
+            res.json(dbStudent)
+        }).catch(err => {
+            res.json(err)
+        })
+    }
 
 }

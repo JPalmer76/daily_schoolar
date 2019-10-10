@@ -31,9 +31,9 @@ function App() {
     // <Nav /> 
     //  {/* </div> */}
 
-     
+
     //  {/* <LoginPage /> */}
-     
+
     //    {/* <div> */}
     //    <Switch>
     //       <Route exact path= "/" component={LoginPage} />
@@ -44,19 +44,15 @@ function App() {
     //  <Footer /> */}
     //  </div> 
     //  </Router>
-<wrapper>
-  <div>
-    <Nav />
-  </div>
-    <div>
-      {/* <LoginPage /> */}
-      {/* <Admin /> */}
-      {/* <Student /> */}
-      <Register />
-    </div>
-    <Footer />
+    <wrapper>
+        <Nav />
+        {/* <LoginPage /> */}
+            {/* <Admin /> */}
+            {/* <Student /> */}
+            <Register />
+            <Footer />
     </wrapper>
-   );
+  );
 }
 
 export default App;

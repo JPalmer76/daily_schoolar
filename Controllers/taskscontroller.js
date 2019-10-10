@@ -1,8 +1,6 @@
 const db = require("../models")  
 
 module.exports = {
-
-
   
   // Post Route for saving a new task
   postTask: (req, res) => {
