@@ -2,13 +2,19 @@ module.exports = function (sequelize, DataTypes) {
 
   const Teacher = sequelize.define('teacher', {
 
-    firstName: { type: DataTypes.STRING },
+      //   id: {
+    //       type: DataTypes.UUID,
+    //       primaryKey: true,
+    //       defaultValue: DataTypes.UUIDV4
+    //   },
 
-    lastName: { type: DataTypes.STRING },
+    tfirstName: { type: DataTypes.STRING },
 
-    email: { type: DataTypes.STRING },
+    tlastName: { type: DataTypes.STRING },
 
-    password: { type: DataTypes.STRING }
+    temail: { type: DataTypes.STRING },
+
+    tpassword: { type: DataTypes.STRING }
 
   });
 

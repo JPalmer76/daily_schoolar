@@ -45,30 +45,12 @@ function App() {
     //  </div> 
     //  </Router>
     <wrapper>
-      <div>
         <Nav />
-      </div>
-      <div>
         {/* <LoginPage /> */}
-      {/* </div> */}
-        <div>
-          <div>
             {/* <Admin /> */}
             {/* <Student /> */}
             <Register />
-            {/* <Footer /> */}
-          </div>
-          {/* <Admin /> */}
-          {/* <Student /> */}
-          {/* <Register /> */}
-          {/* <Footer /> */}
-        </div>
-        {/* <Admin /> */}
-        {/* <Student /> */}
-        <Register />
-      </div>
-      <Footer />
-
+            <Footer />
     </wrapper>
   );
 }

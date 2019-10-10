@@ -23,8 +23,7 @@ export default class Register extends Component {
     const { name, value } = event.target;
 
     this.setState({
-      [name]: value,
-      
+      [name]: value
     });
     
   };
@@ -40,7 +39,7 @@ export default class Register extends Component {
       lastName: document.getElementById("last_name").value,
       email: document.getElementById("Email").value,
       password: document.getElementById("password").value,
-      rePassword: document.getElementById("re_password").value,
+      rePassword: document.getElementById("re_password").value
     });
     
     var config = {
@@ -49,6 +48,35 @@ export default class Register extends Component {
 
     axios.post("/api/students",
     {firstName: this.state.firstName, lastName: this.state.lastName, email: this.state.email, password: this.state.password}, config)
+    .then(res =>{
+      console.log(res)
+    }).catch(err =>{
+      console.log(err)
+    });
+    
+    
+  };
+
+  thandleFormSubmit = event => {
+    // Preventing the default behavior of the form submit (which is to refresh the page)
+    event.preventDefault();
+
+    // Alert the user their first and last name, clear `this.state.firstName` and `this.state.lastName`, clearing the inputs
+    // alert(`${this.state.firstName} ${this.state.lastName} ${this.state.email} ${this.state.password} ${this.state.rePassword}`);
+    this.setState({
+      tfirstName: document.getElementById("tfirst_name").value,
+      tlastName: document.getElementById("tlast_name").value,
+      temail: document.getElementById("tEmail").value,
+      tpassword: document.getElementById("tpassword").value,
+      trePassword: document.getElementById("tre_password").value
+    });
+    
+    var config = {
+      headers: {'Access-Control-Allow-Origin': '*'}
+  };
+
+    axios.post("/api/teachers",
+    {tfirstName: this.state.tfirstName, tlastName: this.state.tlastName, temail: this.state.temail, tpassword: this.state.tpassword}, config)
     .then(res =>{
       console.log(res)
     }).catch(err =>{
@@ -102,7 +130,7 @@ render() {
             </div>
           </div>
           <button className="btn waves-effect waves-light" type="submit" onClick={this.handleFormSubmit}>
-          Submit/Student</button>
+          Submit/Student<i class="material-icons right">send</i></button>
           
         </form>
         
@@ -151,8 +179,8 @@ render() {
               <label htmlFor="password">Re-Enter Password</label>
             </div>
           </div>
-          <button className="btn waves-effect waves-light" type="submit" onClick={this.handleFormSubmit}>
-          Submit/Teacher</button>
+          <button className="btn waves-effect waves-light" type="submit" onClick={this.thandleFormSubmit}>
+          Submit/Teacher<i class="material-icons right">send</i></button>
           
         </form>
         </div>
