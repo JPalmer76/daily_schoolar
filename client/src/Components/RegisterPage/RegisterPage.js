@@ -11,7 +11,11 @@ export default class Register extends Component {
     firstName: "",
     lastName: "",
     email: "",
-    password: ""
+    password: "",
+    tfirstName: "",
+    tlastName: "",
+    temail: "",
+    tpassword: ""
     
   }
 
@@ -19,7 +23,7 @@ export default class Register extends Component {
     const { name, value } = event.target;
 
     this.setState({
-      [name]: value
+      [name]: value,
       
     });
     
@@ -58,7 +62,10 @@ export default class Register extends Component {
 render() {
   
     return (
+      <wrapper>
       <div className="row">
+        <h5>Student Registration</h5>
+        <br />
         <form className="col s12">
           <div className="row">
             <div className="input-field col s6">
@@ -94,22 +101,65 @@ render() {
               <label htmlFor="password">Re-Enter Password</label>
             </div>
           </div>
+          <button className="btn waves-effect waves-light" type="submit" onClick={this.handleFormSubmit}>
+          Submit/Student</button>
           
         </form>
-        <form  action="filled-in">
-            <h5>Are you a Teacher?</h5>
-          <p>
-              
-            <label>
-              <input id="checkbox" type="checkbox" className="filled-in"  />
-              <span></span>
-            </label>
-            
-          </p>
-        </form>
-        <button className="btn waves-effect waves-light" type="submit" onClick={this.handleFormSubmit}>
-          Submit</button>
+        
+        
       </div>
+
+      <strong><hr /></strong>
+      <br />
+
+     
+      <div className="row">
+        <h5>Teacher Registration</h5>
+       
+        <form className="col s12">
+          <div className="row">
+            <div className="input-field col s6">
+              <input
+                placeholder="Placeholder"
+                id="tfirst_name"
+                type="text"
+                className="validate"
+              />
+              <label htmlFor="first_name">First Name</label>
+            </div>
+            <div className="input-field col s6">
+              <input id="tlast_name" type="text" className="validate" />
+              <label htmlFor="last_name">Last Name</label>
+            </div>
+          </div>
+
+          <div className="row">
+            <div className="input-field col s12">
+              <input id="tEmail" type="Email" className="validate" />
+              <label htmlFor="Email">Email</label>
+            </div>
+          </div>
+          <div className="row">
+            <div className="input-field col s12">
+              <input id="tpassword" type="password" className="validate" />
+              <label htmlFor="password">Password</label>
+            </div>
+          </div>
+          <div className="row">
+            <div className="input-field col s12">
+              <input id="tre_password" type="password" className="validate" />
+              <label htmlFor="password">Re-Enter Password</label>
+            </div>
+          </div>
+          <button className="btn waves-effect waves-light" type="submit" onClick={this.handleFormSubmit}>
+          Submit/Teacher</button>
+          
+        </form>
+        </div>
+        </wrapper>
+        
+        
+     
       
     );
   }
