@@ -1,14 +1,50 @@
 import React, { Component } from 'react';
 import "./Style.css";
 import axios from "axios";
+// const router = require("express").Router();
+// const teacherRoutes = require("./teachers");
+// router.use("/teachers", teacherRoutes);
+
+
 
 export default class Admin extends Component {
 
     state = {
     topic: "",
-    message: ""
+    message: "",
+    teachers: [],
+    students: []
 
   }
+
+  componentDidMount() {
+    console.log("Hello");
+    axios.get("/api/teachers/")
+    // fetch("/api/teachers", {method:"GET"})
+    .then((response) => {
+      console.log(response);
+      let teachersFromApi = response.data.map(teacher => { return {value: teacher, display: teacher} })
+      this.setState({ teachers: teachersFromApi})
+      // return response.json();
+    }).catch(error => {
+      console.log(error);
+    })
+
+    console.log("Hello");
+    axios.get("/api/students/")
+    // fetch("/api/teachers", {method:"GET"})
+    .then((response) => {
+      console.log(response);
+      let studentsFromApi = response.data.map(student => { return {value: student, display: student} })
+      this.setState({ students: studentsFromApi})
+      // return response.json();
+    }).catch(error => {
+      console.log(error);
+    });
+  }
+   
+    
+   
 
   handleInputChange = event => {
     const { name, value } = event.target;
@@ -42,8 +78,8 @@ axios.post("/api/tasks",
 }).catch(err =>{
   console.log(err)
 });
-  };
-
+  
+  }
 
   // grabbing value for the student to assign task to
   // handleChange: (e) =>({
@@ -66,27 +102,36 @@ axios.post("/api/tasks",
   {/* assigning the student */}
   <div class="row">
     <div class="col s5 ">
-  <label>Student Select</label>
-  <select name="student" value={this.state.selectValue}  onChange={this.handleChange}  class="browser-default">
-    <option value="" disabled selected>Choose your Student</option>
-    <option value="1">Jayden</option>
+  <label>Techer Select</label>
+  <select name="teacher" value={this.state.selectValue}  onChange={this.handleChange}  class="browser-default">
+    <option value="" disabled selected>Choose your Teacher</option>
+    {/* <option value="1">Jayden</option>
     <option value="2">Bejamin</option>
-    <option value="3">Elliott</option>
+    <option value="3">Elliott</option> */}
+    {this.state.teachers.map((teacher, index )=> {
+      return <option value = {index} >{teacher.display.tfirstName} {teacher.display.tlastName}</option>
+    })}
   </select>
   </div>
+
 
   {/* assigning  to student */}
   <div class="col s1 "></div>
   <div class="col s5 ">
-  <label>Teacher</label>
-  <select class="browser-default">
-    <option value="" disabled selected>Choose your Topic</option>
-    <option value="1"></option>
+  <label>Student Select</label>
+  <select name="student" value={this.state.selectValue}  onChange={this.handleChange}  class="browser-default">
+    <option value="" disabled selected>Choose your Student</option>
+    {/* <option value="1"></option>
     <option value="2"></option>
-    <option value="3"></option>
+    <option value="3"></option> */}
+    {this.state.students.map((student, index )=> {
+      return <option value = {index} >{student.display.firstName} {student.display.lastName}</option>
+    })}
+
   </select>
   </div>
   </div>
+  
   
   <div class="row">
       <form class="col s12">
@@ -116,6 +161,8 @@ axios.post("/api/tasks",
 
   </wrapper>
   
-    )
+      )
+    
   }
 }
+
