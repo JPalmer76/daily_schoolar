@@ -19,7 +19,7 @@ export default class Register extends Component {
     const { name, value } = event.target;
 
     this.setState({
-      [name]: value,
+      [name]: value
       
     });
     
@@ -36,7 +36,7 @@ export default class Register extends Component {
       lastName: document.getElementById("last_name").value,
       email: document.getElementById("Email").value,
       password: document.getElementById("password").value,
-      rePassword: document.getElementById("re_password").value,
+      rePassword: document.getElementById("re_password").value
     });
     
     var config = {
@@ -98,15 +98,16 @@ render() {
         </form>
         <form  action="filled-in">
             <h5>Are you a Teacher?</h5>
-          <p>
+        
               
             <label>
               <input id="checkbox" type="checkbox" className="filled-in"  />
               <span></span>
             </label>
             
-          </p>
+          
         </form>
+  
         <button className="btn waves-effect waves-light" type="submit" onClick={this.handleFormSubmit}>
           Submit</button>
       </div>

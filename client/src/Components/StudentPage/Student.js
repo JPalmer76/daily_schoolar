@@ -5,7 +5,7 @@ import React, { Component } from "react";
 export default class Student extends Component {
   render() {
     return (
-      <wrapper>
+      
         <div id="cardbg">
 
         <div class="row">
@@ -64,7 +64,7 @@ export default class Student extends Component {
             </ul>
           </div>
         </div>
-      </wrapper>
+     
     );
   }
 }
