@@ -13,7 +13,7 @@ postStudent: (req, res) => {
     },
 
     retrieveStudent: (req, res) => {
-        db.Student.findAll().then(dbStudent => {
+        db.student.findAll().then(dbStudent => {
             res.json(dbStudent)
         }).catch(err => {
             res.json(err)
