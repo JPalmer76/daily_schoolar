@@ -47,8 +47,8 @@ function App() {
     <wrapper>
         <Nav />
         {/* <LoginPage /> */}
-            <Admin />
-            {/* <Student /> */}
+            {/* <Admin /> */}
+            <Student />
             {/* <Register /> */}
             <Footer />
     </wrapper>

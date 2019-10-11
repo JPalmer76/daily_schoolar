@@ -28,11 +28,8 @@ export default class Admin extends Component {
       // return response.json();
     }).catch(error => {
       console.log(error);
-    });
+    })
 
-   
-  }
-   componentDidMount () {
     console.log("Hello");
     axios.get("/api/students/")
     // fetch("/api/teachers", {method:"GET"})
@@ -44,7 +41,10 @@ export default class Admin extends Component {
     }).catch(error => {
       console.log(error);
     });
-   }
+  }
+   
+    
+   
 
   handleInputChange = event => {
     const { name, value } = event.target;
@@ -78,8 +78,8 @@ axios.post("/api/tasks",
 }).catch(err =>{
   console.log(err)
 });
-  };
-
+  
+  }
 
   // grabbing value for the student to assign task to
   // handleChange: (e) =>({
@@ -161,6 +161,8 @@ axios.post("/api/tasks",
 
   </wrapper>
   
-    );
+      )
+    
   }
 }
+
